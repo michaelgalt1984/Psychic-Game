@@ -5,7 +5,7 @@ var userGuess;
 //this will be a onkeyup capture from inside the form box
 var missedGuesses = []; 
 //this will be all the letters which the user guessed which didn't match the randomLetter, also max length of 3
-var guessesRemaining = ["3", "2", "1", "No more guesses left- you lose!"]; 
+var guessesRemaining = ["3", "2", "No more guesses left- you lose!"]; 
 //this is an array which get draws from if userGuess === false
 var guessIndex = 0;
 var wins = 0;
@@ -61,7 +61,7 @@ var reset = function() {
 
   	else {
   		
-  		if (guessIndex === 4) {
+  		if (guessIndex === 3) {
 
   			losses++;
   			document.getElementById("losses").innerHTML = losses;
