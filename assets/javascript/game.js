@@ -1,7 +1,7 @@
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var randomLetter = null; 
 //this will be a function, which randomly draws a letter from the alphabet array
-var userGuess = null; 
+var userGuess = []; 
 //this will be a onkeyup capture from inside the form box
 var missedGuesses = []; 
 //this will be all the letters which the user guessed which didn't match the randomLetter, also max length of 3
@@ -14,7 +14,7 @@ var losses = 0;
 var text = "";
 
 var updateGuessesRemaining = function() {
-	document.getElementById("#guessesRemainingBox").innerHTML = guessesRemaining;
+	document.querySelector("guessesRemainingBox").innerHTML = guessesRemaining[i];
 };
 
 var updateRandomLetter = function() {
@@ -22,7 +22,7 @@ var updateRandomLetter = function() {
 };
 
 var updateMissedGuesses = function() {
-	document.getElementById("#guessBoxFeedback").innerHTML = missedGuesses.join(", ");
+	document.querySelector("guessBoxFeedback").innerHTML = missedGuesses.join(", ");
 };
 
 function getGuesses() {
@@ -45,14 +45,14 @@ updateGuessesRemaining();
 document.onkeyup = function(event) {
 	guessesRemaining++;
 	var letter = String.fromCharCode(event.keyCode).toLowerCase();
-	userGuess.push(letter);
+	userGuess.push(event.keyCode);
 	guessesRemaining();
 	updateGuessesSoFar();
 
 	if (letter === randomLetter) {
 
 	wins++;
-	document.getElementById("#wins").innerHTML = wins;
+	document.querySelector("wins").innerHTML = wins;
 
 	reset();
 	}
@@ -61,7 +61,7 @@ document.onkeyup = function(event) {
 	if (guessesRemaining === "No more guesses left- you lose!") {
 
 	losses++;
-	document.querySelector("#losses").innerHTML = losses;
+	document.querySelector("losses").innerHTML = losses;
 
 	reset();
 	}
