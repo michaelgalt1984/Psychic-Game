@@ -20,9 +20,9 @@
 
       <p>Guess which letter I am thinking of... You guess wrong, you lose! You guess right... then I guess that you are psychic!</p>
 
-      <p>The English alphabet has 26 letters, and you'll get 3 guesses to guess the letter.  If you can't do it in 3, you obviously aren't pyschic and just got lucky.</p>
+      <p>The English alphabet has 26 letters and you'll get 3 guesses to guess the letter.  The only options are letters, so numbers or special characters are not valid guesses.  If you can't figure it out with 3 guesses, you obviously aren't psychic and just got lucky ;)</p>
 
-      Only 1 letter at a time, please!: <input type="text" id="fname" onkeyup="myFunction()">
+      <span id="guessBox">Only 1 letter at a time, please!: <input type="text" id="letterGuesses" onkeyup="getGuesses()"></span>
 
     </div>
   </div>
@@ -43,12 +43,12 @@
     <div class="row">
       <div class="col-md-6">
         <h2>Guesses Made</h2>
-        <p id="guessMade">Your guess was: <span id="counter"></span></p>
+        <p id="guessMade">Your guess was: <span id="guessBoxFeedback"></span></p>
       </div>
 
       <div class="col-md-6">
         <h2>Guesses Left</h2>
-        <p id="guessLeft"></p>
+        <p id="guessLeft">Your guesses remaining: <span id="guessesRemainingBox"></span></p>
       </div>
     </div>
   </div>
